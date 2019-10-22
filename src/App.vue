@@ -6,6 +6,9 @@
 </template>
 
 <script>
+import "bootstrap/dist/css/bootstrap.css"
+import "font-awesome/css/font-awesome.css"
+
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
