@@ -40,7 +40,7 @@ const items = [
 ];
 
 const isDomainAvailable = function (url) {
-    return new Promisse(function (resolve, reject) {
+    return new Promise(function (resolve, reject) {
         dns.resolve(url, function(error) {
             if (error) {
                 resolve(true);
@@ -73,8 +73,8 @@ const resolvers = {
         },
         async generateDomains() {
 			const domains = [];
-			for (const prefix of items.filter(item => item.type === 'prefix')) {
-				for (const suffix of items.filter(item => item.type === 'suffix')) {
+			for (const prefix of items.filter(item => item.type === "prefix")) {
+				for (const suffix of items.filter(item => item.type === "suffix")) {
 					const name = prefix.description + suffix.description;
 					const url = name.toLowerCase();
                     const checkout = `https://checkout.hostgator.com.br/?a=add&sld=${url}&tld=.com.br`;
